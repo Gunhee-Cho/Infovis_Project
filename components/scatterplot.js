@@ -65,6 +65,8 @@ class Scatterplot {
             .attr("cy", d => this.yScale(d[yVar]))
             .attr("fill", useColor ? (this.lVar != 'none' ? d => this.lScale(d[lVar]) : "skyblue") : (this.lVar != 'none' ? d => this.blackScale(d[lVar]) : "black"))
             .attr("r", this.sVar != 'none' ? d => this.sScale(d[sVar]) : 5)
+			.attr("stroke-width", 1)
+			.attr("stroke", "gray")
 
 
         this.container.call(this.brush);
