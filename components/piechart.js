@@ -3,7 +3,7 @@ class Piechart {
         top: 10, right: 10, bottom: 40, left: 40
     }
 
-    constructor(svg, width = 500, height = 500) {
+    constructor(svg, width = 400, height = 400) {
         this.svg = svg;
         this.width = width;
         this.height = height;
@@ -47,8 +47,10 @@ class Piechart {
 		  .attr("stroke-width", "2px")
 		  .attr("opacity", 0.7)
           .attr("fill", d => color(d.data[0]))
-		 
-		this.container.selectAll('mySlices')
+		  .transition()
+		  .duration(100)
+		  
+ 		this.container.selectAll('mySlices')
 			.data(data_pie)
 			.enter()
 			.append('text')
@@ -56,5 +58,10 @@ class Piechart {
 			.attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
 			.style("text-anchor", "middle")
 			.style("font-size", 17)
+			.style("font-family", "Arial")
+		
+		this.container.selectAll('mySlices')
+			.exit()
+			.remove()
     }
 }

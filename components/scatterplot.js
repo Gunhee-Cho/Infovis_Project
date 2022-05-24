@@ -3,7 +3,7 @@ class Scatterplot {
         top: 10, right: 100, bottom: 40, left: 40
     }
 
-    constructor(svg, data, width = 250, height = 250, size = 10) {
+    constructor(svg, data, width = 400, height = 400, size = 10) {
         this.svg = svg;
         this.data = data;
         this.width = width;
@@ -65,8 +65,8 @@ class Scatterplot {
             .attr("cy", d => this.yScale(d[yVar]))
             .attr("fill", useColor ? (this.lVar != 'none' ? d => this.lScale(d[lVar]) : "skyblue") : (this.lVar != 'none' ? d => this.blackScale(d[lVar]) : "black"))
             .attr("r", this.sVar != 'none' ? d => this.sScale(d[sVar]) : 5)
-	    .attr("stroke-width", 1)
-	    .attr("stroke", "gray")
+			.attr("stroke-width", 0.5)
+			.attr("stroke", "gray")
 
 
         this.container.call(this.brush);
