@@ -27,7 +27,7 @@
             width: 1200px;
             background: white;
         }
-
+		
         /* In the <style> tag in index.html */
         .brushed {
             stroke-width: 1;
@@ -39,15 +39,15 @@
 
 <body>
     <header>
-        <nav class="container navbar navbar-light bg-light">
+        <nav class="container navbar-light bg-light text-center">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">ChoGunhee Infovis Project</span>
+                <span class="navbar-brand mb-0 h1" style="font-family: Arial">Pokemon Legend Arceus Review Infovis</span>
             </div>
         </nav>
 
     </header>
 
-    <main class="container pb-3">
+    <main class="container pb-3" style="padding-left: 250px;">
         <div class="row pt-2">
             <div class="col-1 text-end pe-2"><strong>X:</strong></div>
             <div class="col-11">
@@ -151,14 +151,17 @@
                 </div>
             </div>
         </div>
+	</main>
+    <main class="container ps-3 pt-3">
         <div class="text-center">
-            <svg width="400" height="400" id="scatterplot">
+            <svg class="border pt-2 ps-4" width="600" height="600" id="scatterplot">
             </svg>
-
-            <svg width="400" height="400" id="histogram">
+        </div>
+		<div class="text-center">
+            <svg class="border pt-2" width="200" height="200" id="histogram">
             </svg>
 			
-			<svg width="400" height="400" id="piechart">
+			<svg class="border pt-4 ps-4" width="200" height="200" id="piechart">
             </svg>
         </div>
         <table class="table table-striped text-center">
